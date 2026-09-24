@@ -1,6 +1,6 @@
 # Rocky Mountain Nightlights
 
-Static website for Rocky Mountain Nightlights holiday lighting, with a quote request form.
+Static website for Rocky Mountain Nightlights (permanent architectural lighting, landscape lighting, and seasonal Christmas & holiday lighting), with a quote request form.
 
 - `index.html`: page content (services, pricing, add-ons, quote form)
 - `styles.css`: styling
