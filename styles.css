@@ -17,7 +17,7 @@
 *::before,
 *::after { box-sizing: border-box; }
 
-html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+html { scroll-behavior: smooth; scroll-padding-top: 116px; }
 
 body {
   margin: 0;
@@ -93,7 +93,7 @@ textarea:focus-visible { outline: 3px solid var(--gold-light); outline-offset: 2
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(7, 15, 31, .92);
+  background: rgba(0, 0, 0, .96);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid rgba(212, 169, 74, .2);
 }
@@ -102,7 +102,7 @@ textarea:focus-visible { outline: 3px solid var(--gold-light); outline-offset: 2
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  min-height: 68px;
+  min-height: 104px;
 }
 .brand {
   display: flex;
@@ -111,10 +111,7 @@ textarea:focus-visible { outline: 3px solid var(--gold-light); outline-offset: 2
   text-decoration: none;
   color: var(--gold);
 }
-.brand-mark { width: 44px; height: 28px; }
-.brand-text { display: flex; flex-direction: column; line-height: 1.05; }
-.brand-top { font-family: var(--font-display); color: #fff; font-weight: 700; font-size: 1.05rem; }
-.brand-bottom { font-family: var(--font-display); color: var(--gold); letter-spacing: .3em; font-size: .72rem; }
+.brand-logo { height: 96px; width: auto; }
 
 .main-nav { display: flex; align-items: center; gap: 1.4rem; }
 .main-nav a:not(.btn) {
@@ -490,7 +487,8 @@ fieldset.field { border: 0; padding: 0; }
   .section { padding: 4rem 0; }
   .container { padding: 0 16px; }
   .main-nav .nav-phone { display: none; }
-  .brand-top { font-size: .92rem; }
+  .brand-logo { height: 64px; }
+  .header-inner { min-height: 72px; }
   .hero { min-height: auto; padding: 4rem 0 3rem; }
   .hero-actions .btn { flex: 1 1 100%; }
   .extras-grid { grid-template-columns: repeat(2, 1fr); }
