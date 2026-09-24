@@ -91,3 +91,12 @@ form.addEventListener("submit", async (e) => {
 function escapeHtml(str) {
   return str.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 }
+
+// Show the slim pinned bar once the big logo banner has scrolled out of view.
+const stickyBar = document.querySelector(".sticky-bar");
+new IntersectionObserver(([entry]) => {
+  const show = !entry.isIntersecting;
+  stickyBar.classList.toggle("show", show);
+  stickyBar.setAttribute("aria-hidden", String(!show));
+  stickyBar.querySelectorAll("a").forEach((a) => (show ? a.removeAttribute("tabindex") : a.setAttribute("tabindex", "-1")));
+}).observe(document.querySelector(".site-header"));
