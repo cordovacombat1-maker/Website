@@ -1,4 +1,4 @@
-// Where quote requests are sent.
+// Where consultation requests are sent.
 // Leave empty when hosting on Netlify: Netlify Forms picks up the form automatically.
 // To use Formspree (or a similar service) on any other host, paste its endpoint here,
 // e.g. "https://formspree.io/f/abcdwxyz".
@@ -13,7 +13,7 @@ const form = document.getElementById("quote-form");
 const statusEl = form.querySelector(".form-status");
 const serviceSelect = document.getElementById("service");
 
-// "Quote ... Lighting" buttons preselect the matching lighting type.
+// Service card buttons preselect the matching service in the form.
 document.querySelectorAll("[data-service]").forEach((btn) => {
   btn.addEventListener("click", () => {
     serviceSelect.value = btn.dataset.service;
@@ -76,15 +76,15 @@ form.addEventListener("submit", async (e) => {
     const name = (data.get("name") || "").toString().trim().split(" ")[0];
     form.innerHTML = `
       <div class="form-success">
-        <h3>Thank you${name ? ", " + escapeHtml(name) : ""}!</h3>
-        <p>Your quote request is on its way. We'll be in touch shortly.</p>
-        <p>Need us sooner? Call <a href="${PHONE_LINK}">${PHONE_DISPLAY}</a>.</p>
+        <h3>Thank you${name ? ", " + escapeHtml(name) : ""}.</h3>
+        <p>Your consultation request has been received. We'll be in touch shortly to arrange a time.</p>
+        <p>Prefer to talk sooner? Call <a href="${PHONE_LINK}">${PHONE_DISPLAY}</a>.</p>
       </div>`;
   } catch (err) {
     statusEl.classList.add("error");
-    statusEl.innerHTML = `Sorry, something went wrong sending your request. Please call us at <a href="${PHONE_LINK}">${PHONE_DISPLAY}</a>.`;
+    statusEl.innerHTML = `We weren't able to send your request. Please call us at <a href="${PHONE_LINK}">${PHONE_DISPLAY}</a>.`;
     button.disabled = false;
-    button.textContent = "Send My Quote Request";
+    button.textContent = "Request My Consultation";
   }
 });
 
